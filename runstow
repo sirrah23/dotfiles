@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+import sys
+import argparse
+import os
+import subprocess
+
+def get_all_child_subdirs():
+        return next(os.walk('.'))[1]
+
+def stowcmd(targetdir, dotfilesdir):
+        # TODO: Get exit code???
+        subprocess.run(['stow', '-t', targetdir, dotfilesdir])
+
+def stow(dotfilesdir='all'):
+        """Returns True if stow is able to run, otherwise returns False."""
+        targetdir = os.path.expanduser('~')
+        subdirs = get_all_child_subdirs()
+        if dotfilesdir == 'all':
+                for subdir in subdirs:
+                        stowcmd(targetdir, subdir)
+                return True
+        if dotfilesdir in subdirs:
+                stowcmd(targetdir, dotfilesdir)
+                return True
+        return False
+
+if __name__ == "__main__":
+        parser = argparse.ArgumentParser(description='Deploy dot files to your home directory')
+        parser.add_argument('dotfilesdir', \
+                type=str, \
+                help='the directory that contains the dot files that you want to deploy to your home directory')
+        args = parser.parse_args()
+        res = stow(args.dotfilesdir)
+        sys.exit(0) if res else sys.exit(1)
