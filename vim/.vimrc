@@ -109,13 +109,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " My Plugins...
-Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-sleuth'
 Plugin 'kana/vim-surround'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'reedes/vim-pencil'
+" Plugin 'reedes/vim-pencil'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
@@ -123,7 +122,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
 " Plugin 'scrooloose/syntastic'
-Plugin 'valloric/youcompleteme'
+"Plugin 'valloric/youcompleteme'
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -156,12 +156,12 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 "Pencil
-let g:pencil#textwidth = 74
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd,md  call pencil#init()
-  autocmd FileType text             call pencil#init()
-augroup END
+"let g:pencil#textwidth = 74
+"augroup pencil
+""  autocmd!
+""  autocmd FileType markdown,mkd,md  call pencil#init()
+""  autocmd FileType text             call pencil#init()
+"augroup END
 
 "Tagbar
 " ----- xolox/vim-easytags settings -----
@@ -200,3 +200,6 @@ nmap <leader>g :GitGutterToggle<CR>
 " in VIM so that I don't have to remember all the
 " syntax
 command! FormatJSON %!python -m json.tool
+
+" vim-devicons settings
+set encoding=utf8
