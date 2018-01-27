@@ -1,0 +1,14 @@
+/* Remove tabs at the top fo the browser */
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+
+/* Remove text at the top of the treestyle tabs sidebar */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+    display: none;
+}

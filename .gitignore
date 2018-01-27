@@ -1,2 +1,5 @@
 vim/.vim/autload
 vim/.vim/bundle
+nvim/bundle
+fish_history
+fishd.*

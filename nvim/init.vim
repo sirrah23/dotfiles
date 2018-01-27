@@ -11,6 +11,7 @@ set autoindent
 set number
 set wildmode=longest,list
 set cc=80
+set guicursor=
 colorscheme monokai
 let mapleader=","
 
